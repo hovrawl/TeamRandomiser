@@ -36,6 +36,7 @@
             // 
             // playerPartnerCheckedListBox
             // 
+            this.playerPartnerCheckedListBox.CheckOnClick = true;
             this.playerPartnerCheckedListBox.FormattingEnabled = true;
             this.playerPartnerCheckedListBox.Location = new System.Drawing.Point(12, 34);
             this.playerPartnerCheckedListBox.Name = "playerPartnerCheckedListBox";

@@ -37,14 +37,16 @@ namespace TeamRandomiser.Forms
             var selectedIndexes = new List<int>();
             foreach (var item in playerPartnerCheckedListBox.Items)
             {
-                if (item is PlayerRef playerRef)
+                if (!(item is PlayerRef playerRef))
                 {
-                    if (SelectedPartners.Any(i =>
-                        i.Name.Equals(playerRef.Name, StringComparison.CurrentCultureIgnoreCase)))
-                    {
-                        var index = playerPartnerCheckedListBox.Items.IndexOf(item);
-                        selectedIndexes.Add(index);
-                    }
+                    continue;
+                }
+
+                if (SelectedPartners.Any(i =>
+                    i.Name.Equals(playerRef.Name, StringComparison.CurrentCultureIgnoreCase)))
+                {
+                    var index = playerPartnerCheckedListBox.Items.IndexOf(item);
+                    selectedIndexes.Add(index);
                 }
             }
 

@@ -24,6 +24,15 @@ namespace TeamRandomiser.Forms
         {
             Players = LiteDbHelper.GetPlayers();
 
+            #region TeamsTab
+
+            teamsPlayerCheckListBox.DataSource = Players;
+            teamsPlayerCheckListBox.DisplayMember = "Name";
+
+            #endregion
+
+            #region PlayersTab
+
             playersListBox.DataSource = Players;
             playersListBox.DisplayMember = "Name";
             var ranks = new List<string>();
@@ -33,6 +42,9 @@ namespace TeamRandomiser.Forms
             }
 
             playerRankCombo.DataSource = ranks;
+
+            #endregion
+
         }
 
         #endregion
@@ -45,6 +57,10 @@ namespace TeamRandomiser.Forms
             playersListBox.DataSource = null;
             playersListBox.DataSource = Players;
             playersListBox.DisplayMember = "Name";
+
+            teamsPlayerCheckListBox.DataSource = null;
+            teamsPlayerCheckListBox.DataSource = Players;
+            teamsPlayerCheckListBox.DisplayMember = "Name";
         }
 
         private void SavePlayer(Player player)
@@ -105,6 +121,47 @@ namespace TeamRandomiser.Forms
                 playerPartnersListBox.DataSource = existingPlayer.Partners;
                 playerPartnersListBox.DisplayMember = "Name";
             }
+        }
+
+        #endregion
+
+        #region TeamsManagement
+
+        private void RandomiseTeams()
+        {
+            var playersToRandomise = new List<Player>();
+            foreach (var item in teamsPlayerCheckListBox.CheckedItems)
+            {
+                if (item is Player checkedPlayer)
+                {
+                    playersToRandomise.Add(checkedPlayer);
+                }
+            }
+
+            var teamCount = playersToRandomise.Count / 2;
+
+            var teams = new List<Team>();
+            for (var i = 0; i < teamCount; i++)
+            {
+                teams.Add(new Team()
+                {
+                    Name = $"Team {i+1}"
+                });
+            }
+
+            var randomMax = teams.Count - 1;
+            var random = new Random();
+            foreach (var player in playersToRandomise)
+            {
+                var teamIndex = random.Next(0, randomMax);
+                var teamToInsert = teams[teamIndex];
+
+                teamToInsert.Add(player);
+            }
+
+            teamsSelectionListBox.DataSource = null;
+            teamsSelectionListBox.DataSource = teams;
+            teamsSelectionListBox.DisplayMember = "Name";
         }
 
         #endregion
@@ -187,6 +244,25 @@ namespace TeamRandomiser.Forms
         {
             ManagePlayerPartners();
         }
+
+        private void teamsRandomiseBtn_Click(object sender, EventArgs e)
+        {
+            RandomiseTeams();
+        }
         #endregion
+
+        private void teamsSelectionListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            var selectedTeam = playersListBox.SelectedItem;
+            var team = new Team();
+            if (selectedTeam is Team existingTeam)
+            {
+                team = existingTeam;
+            }
+
+            teamDetailsListBox.DataSource = team;
+            teamDetailsListBox.DisplayMember = "Name";
+        }
     }
 }

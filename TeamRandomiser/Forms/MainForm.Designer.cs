@@ -55,7 +55,23 @@
             this.playerPartnersLbl = new System.Windows.Forms.Label();
             this.playerPartnersListBox = new System.Windows.Forms.ListBox();
             this.playerPartnersAddBtn = new System.Windows.Forms.Button();
+            this.teamsSplitContainer = new System.Windows.Forms.SplitContainer();
+            this.teamsPlayerCheckListBox = new System.Windows.Forms.CheckedListBox();
+            this.teamsPlayerHeaderPnl = new System.Windows.Forms.Panel();
+            this.teamsPlayerCheckListBoxPnl = new System.Windows.Forms.Panel();
+            this.teamsPlayerHeaderLbl = new System.Windows.Forms.Label();
+            this.teamsRandomiseBtn = new System.Windows.Forms.Button();
+            this.teamDetailsSplitContainer = new System.Windows.Forms.SplitContainer();
+            this.teamsSelectionContentPnl = new System.Windows.Forms.Panel();
+            this.teamsSelectionHeaderPnl = new System.Windows.Forms.Panel();
+            this.teamsSelectionHeaderLbl = new System.Windows.Forms.Label();
+            this.teamsSelectionListBox = new System.Windows.Forms.ListBox();
+            this.teamDetailsContentPnl = new System.Windows.Forms.Panel();
+            this.teamDetailsListBox = new System.Windows.Forms.ListBox();
+            this.teamDetailsHeaderPnl = new System.Windows.Forms.Panel();
+            this.teamDetailsHeaderLbl = new System.Windows.Forms.Label();
             this.mainFormTabs.SuspendLayout();
+            this.mainFormTabTeams.SuspendLayout();
             this.mainFormTabPlayers.SuspendLayout();
             this.playersContainerPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playersSplitPanel)).BeginInit();
@@ -66,6 +82,20 @@
             this.playersListContentPnl.SuspendLayout();
             this.playerDetailsGroup.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.teamsSplitContainer)).BeginInit();
+            this.teamsSplitContainer.Panel1.SuspendLayout();
+            this.teamsSplitContainer.Panel2.SuspendLayout();
+            this.teamsSplitContainer.SuspendLayout();
+            this.teamsPlayerHeaderPnl.SuspendLayout();
+            this.teamsPlayerCheckListBoxPnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.teamDetailsSplitContainer)).BeginInit();
+            this.teamDetailsSplitContainer.Panel1.SuspendLayout();
+            this.teamDetailsSplitContainer.Panel2.SuspendLayout();
+            this.teamDetailsSplitContainer.SuspendLayout();
+            this.teamsSelectionContentPnl.SuspendLayout();
+            this.teamsSelectionHeaderPnl.SuspendLayout();
+            this.teamDetailsContentPnl.SuspendLayout();
+            this.teamDetailsHeaderPnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainFormTabs
@@ -81,6 +111,7 @@
             // 
             // mainFormTabTeams
             // 
+            this.mainFormTabTeams.Controls.Add(this.teamsSplitContainer);
             this.mainFormTabTeams.Location = new System.Drawing.Point(4, 22);
             this.mainFormTabTeams.Name = "mainFormTabTeams";
             this.mainFormTabTeams.Padding = new System.Windows.Forms.Padding(3);
@@ -134,16 +165,16 @@
             this.playersListHeaderPnl.Dock = System.Windows.Forms.DockStyle.Top;
             this.playersListHeaderPnl.Location = new System.Drawing.Point(0, 0);
             this.playersListHeaderPnl.Name = "playersListHeaderPnl";
-            this.playersListHeaderPnl.Size = new System.Drawing.Size(262, 31);
+            this.playersListHeaderPnl.Size = new System.Drawing.Size(262, 30);
             this.playersListHeaderPnl.TabIndex = 0;
             // 
             // playersListContentPnl
             // 
             this.playersListContentPnl.Controls.Add(this.playersListBox);
             this.playersListContentPnl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.playersListContentPnl.Location = new System.Drawing.Point(0, 31);
+            this.playersListContentPnl.Location = new System.Drawing.Point(0, 30);
             this.playersListContentPnl.Name = "playersListContentPnl";
-            this.playersListContentPnl.Size = new System.Drawing.Size(262, 363);
+            this.playersListContentPnl.Size = new System.Drawing.Size(262, 364);
             this.playersListContentPnl.TabIndex = 1;
             // 
             // playersAddNewBtn
@@ -172,7 +203,7 @@
             this.playersListBox.FormattingEnabled = true;
             this.playersListBox.Location = new System.Drawing.Point(0, 0);
             this.playersListBox.Name = "playersListBox";
-            this.playersListBox.Size = new System.Drawing.Size(262, 363);
+            this.playersListBox.Size = new System.Drawing.Size(262, 364);
             this.playersListBox.TabIndex = 0;
             this.playersListBox.SelectedIndexChanged += new System.EventHandler(this.playersListBox_SelectedIndexChanged);
             // 
@@ -336,6 +367,165 @@
             this.playerPartnersAddBtn.UseVisualStyleBackColor = true;
             this.playerPartnersAddBtn.Click += new System.EventHandler(this.playerPartnersAddBtn_Click);
             // 
+            // teamsSplitContainer
+            // 
+            this.teamsSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.teamsSplitContainer.Location = new System.Drawing.Point(3, 3);
+            this.teamsSplitContainer.Name = "teamsSplitContainer";
+            // 
+            // teamsSplitContainer.Panel1
+            // 
+            this.teamsSplitContainer.Panel1.Controls.Add(this.teamsPlayerCheckListBoxPnl);
+            this.teamsSplitContainer.Panel1.Controls.Add(this.teamsPlayerHeaderPnl);
+            // 
+            // teamsSplitContainer.Panel2
+            // 
+            this.teamsSplitContainer.Panel2.Controls.Add(this.teamDetailsSplitContainer);
+            this.teamsSplitContainer.Size = new System.Drawing.Size(786, 394);
+            this.teamsSplitContainer.SplitterDistance = 255;
+            this.teamsSplitContainer.TabIndex = 0;
+            // 
+            // teamsPlayerCheckListBox
+            // 
+            this.teamsPlayerCheckListBox.CheckOnClick = true;
+            this.teamsPlayerCheckListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.teamsPlayerCheckListBox.FormattingEnabled = true;
+            this.teamsPlayerCheckListBox.Location = new System.Drawing.Point(0, 0);
+            this.teamsPlayerCheckListBox.Name = "teamsPlayerCheckListBox";
+            this.teamsPlayerCheckListBox.Size = new System.Drawing.Size(255, 364);
+            this.teamsPlayerCheckListBox.TabIndex = 0;
+            // 
+            // teamsPlayerHeaderPnl
+            // 
+            this.teamsPlayerHeaderPnl.Controls.Add(this.teamsPlayerHeaderLbl);
+            this.teamsPlayerHeaderPnl.Controls.Add(this.teamsRandomiseBtn);
+            this.teamsPlayerHeaderPnl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.teamsPlayerHeaderPnl.Location = new System.Drawing.Point(0, 0);
+            this.teamsPlayerHeaderPnl.Name = "teamsPlayerHeaderPnl";
+            this.teamsPlayerHeaderPnl.Size = new System.Drawing.Size(255, 30);
+            this.teamsPlayerHeaderPnl.TabIndex = 0;
+            // 
+            // teamsPlayerCheckListBoxPnl
+            // 
+            this.teamsPlayerCheckListBoxPnl.Controls.Add(this.teamsPlayerCheckListBox);
+            this.teamsPlayerCheckListBoxPnl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.teamsPlayerCheckListBoxPnl.Location = new System.Drawing.Point(0, 30);
+            this.teamsPlayerCheckListBoxPnl.Name = "teamsPlayerCheckListBoxPnl";
+            this.teamsPlayerCheckListBoxPnl.Size = new System.Drawing.Size(255, 364);
+            this.teamsPlayerCheckListBoxPnl.TabIndex = 1;
+            // 
+            // teamsPlayerHeaderLbl
+            // 
+            this.teamsPlayerHeaderLbl.AutoSize = true;
+            this.teamsPlayerHeaderLbl.Location = new System.Drawing.Point(3, 8);
+            this.teamsPlayerHeaderLbl.Name = "teamsPlayerHeaderLbl";
+            this.teamsPlayerHeaderLbl.Size = new System.Drawing.Size(41, 13);
+            this.teamsPlayerHeaderLbl.TabIndex = 3;
+            this.teamsPlayerHeaderLbl.Text = "Players";
+            // 
+            // teamsRandomiseBtn
+            // 
+            this.teamsRandomiseBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.teamsRandomiseBtn.Location = new System.Drawing.Point(177, 3);
+            this.teamsRandomiseBtn.Name = "teamsRandomiseBtn";
+            this.teamsRandomiseBtn.Size = new System.Drawing.Size(75, 23);
+            this.teamsRandomiseBtn.TabIndex = 2;
+            this.teamsRandomiseBtn.Text = "Randomise";
+            this.teamsRandomiseBtn.UseVisualStyleBackColor = true;
+            this.teamsRandomiseBtn.Click += new System.EventHandler(this.teamsRandomiseBtn_Click);
+            // 
+            // teamDetailsSplitContainer
+            // 
+            this.teamDetailsSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.teamDetailsSplitContainer.Location = new System.Drawing.Point(0, 0);
+            this.teamDetailsSplitContainer.Name = "teamDetailsSplitContainer";
+            // 
+            // teamDetailsSplitContainer.Panel1
+            // 
+            this.teamDetailsSplitContainer.Panel1.Controls.Add(this.teamsSelectionContentPnl);
+            this.teamDetailsSplitContainer.Panel1.Controls.Add(this.teamsSelectionHeaderPnl);
+            // 
+            // teamDetailsSplitContainer.Panel2
+            // 
+            this.teamDetailsSplitContainer.Panel2.Controls.Add(this.teamDetailsContentPnl);
+            this.teamDetailsSplitContainer.Panel2.Controls.Add(this.teamDetailsHeaderPnl);
+            this.teamDetailsSplitContainer.Size = new System.Drawing.Size(527, 394);
+            this.teamDetailsSplitContainer.SplitterDistance = 175;
+            this.teamDetailsSplitContainer.TabIndex = 0;
+            // 
+            // teamsSelectionContentPnl
+            // 
+            this.teamsSelectionContentPnl.Controls.Add(this.teamsSelectionListBox);
+            this.teamsSelectionContentPnl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.teamsSelectionContentPnl.Location = new System.Drawing.Point(0, 30);
+            this.teamsSelectionContentPnl.Name = "teamsSelectionContentPnl";
+            this.teamsSelectionContentPnl.Size = new System.Drawing.Size(175, 364);
+            this.teamsSelectionContentPnl.TabIndex = 2;
+            // 
+            // teamsSelectionHeaderPnl
+            // 
+            this.teamsSelectionHeaderPnl.Controls.Add(this.teamsSelectionHeaderLbl);
+            this.teamsSelectionHeaderPnl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.teamsSelectionHeaderPnl.Location = new System.Drawing.Point(0, 0);
+            this.teamsSelectionHeaderPnl.Name = "teamsSelectionHeaderPnl";
+            this.teamsSelectionHeaderPnl.Size = new System.Drawing.Size(175, 30);
+            this.teamsSelectionHeaderPnl.TabIndex = 3;
+            // 
+            // teamsSelectionHeaderLbl
+            // 
+            this.teamsSelectionHeaderLbl.AutoSize = true;
+            this.teamsSelectionHeaderLbl.Location = new System.Drawing.Point(3, 8);
+            this.teamsSelectionHeaderLbl.Name = "teamsSelectionHeaderLbl";
+            this.teamsSelectionHeaderLbl.Size = new System.Drawing.Size(39, 13);
+            this.teamsSelectionHeaderLbl.TabIndex = 3;
+            this.teamsSelectionHeaderLbl.Text = "Teams";
+            // 
+            // teamsSelectionListBox
+            // 
+            this.teamsSelectionListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.teamsSelectionListBox.FormattingEnabled = true;
+            this.teamsSelectionListBox.Location = new System.Drawing.Point(0, 0);
+            this.teamsSelectionListBox.Name = "teamsSelectionListBox";
+            this.teamsSelectionListBox.Size = new System.Drawing.Size(175, 364);
+            this.teamsSelectionListBox.TabIndex = 0;
+            this.teamsSelectionListBox.SelectedIndexChanged += new System.EventHandler(this.teamsSelectionListBox_SelectedIndexChanged);
+            // 
+            // teamDetailsContentPnl
+            // 
+            this.teamDetailsContentPnl.Controls.Add(this.teamDetailsListBox);
+            this.teamDetailsContentPnl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.teamDetailsContentPnl.Location = new System.Drawing.Point(0, 30);
+            this.teamDetailsContentPnl.Name = "teamDetailsContentPnl";
+            this.teamDetailsContentPnl.Size = new System.Drawing.Size(348, 364);
+            this.teamDetailsContentPnl.TabIndex = 3;
+            // 
+            // teamDetailsListBox
+            // 
+            this.teamDetailsListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.teamDetailsListBox.FormattingEnabled = true;
+            this.teamDetailsListBox.Location = new System.Drawing.Point(0, 0);
+            this.teamDetailsListBox.Name = "teamDetailsListBox";
+            this.teamDetailsListBox.Size = new System.Drawing.Size(348, 364);
+            this.teamDetailsListBox.TabIndex = 0;
+            // 
+            // teamDetailsHeaderPnl
+            // 
+            this.teamDetailsHeaderPnl.Controls.Add(this.teamDetailsHeaderLbl);
+            this.teamDetailsHeaderPnl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.teamDetailsHeaderPnl.Location = new System.Drawing.Point(0, 0);
+            this.teamDetailsHeaderPnl.Name = "teamDetailsHeaderPnl";
+            this.teamDetailsHeaderPnl.Size = new System.Drawing.Size(348, 30);
+            this.teamDetailsHeaderPnl.TabIndex = 4;
+            // 
+            // teamDetailsHeaderLbl
+            // 
+            this.teamDetailsHeaderLbl.AutoSize = true;
+            this.teamDetailsHeaderLbl.Location = new System.Drawing.Point(3, 8);
+            this.teamDetailsHeaderLbl.Name = "teamDetailsHeaderLbl";
+            this.teamDetailsHeaderLbl.Size = new System.Drawing.Size(65, 13);
+            this.teamDetailsHeaderLbl.TabIndex = 3;
+            this.teamDetailsHeaderLbl.Text = "Team Name";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -347,6 +537,7 @@
             this.Name = "MainForm";
             this.Text = "Team Randomiser";
             this.mainFormTabs.ResumeLayout(false);
+            this.mainFormTabTeams.ResumeLayout(false);
             this.mainFormTabPlayers.ResumeLayout(false);
             this.playersContainerPnl.ResumeLayout(false);
             this.playersSplitPanel.Panel1.ResumeLayout(false);
@@ -360,6 +551,23 @@
             this.playerDetailsGroup.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.teamsSplitContainer.Panel1.ResumeLayout(false);
+            this.teamsSplitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.teamsSplitContainer)).EndInit();
+            this.teamsSplitContainer.ResumeLayout(false);
+            this.teamsPlayerHeaderPnl.ResumeLayout(false);
+            this.teamsPlayerHeaderPnl.PerformLayout();
+            this.teamsPlayerCheckListBoxPnl.ResumeLayout(false);
+            this.teamDetailsSplitContainer.Panel1.ResumeLayout(false);
+            this.teamDetailsSplitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.teamDetailsSplitContainer)).EndInit();
+            this.teamDetailsSplitContainer.ResumeLayout(false);
+            this.teamsSelectionContentPnl.ResumeLayout(false);
+            this.teamsSelectionHeaderPnl.ResumeLayout(false);
+            this.teamsSelectionHeaderPnl.PerformLayout();
+            this.teamDetailsContentPnl.ResumeLayout(false);
+            this.teamDetailsHeaderPnl.ResumeLayout(false);
+            this.teamDetailsHeaderPnl.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -393,6 +601,21 @@
         private System.Windows.Forms.Button playerPartnersAddBtn;
         private System.Windows.Forms.ListBox playerPartnersListBox;
         private System.Windows.Forms.Label playerPartnersLbl;
+        private System.Windows.Forms.SplitContainer teamsSplitContainer;
+        private System.Windows.Forms.CheckedListBox teamsPlayerCheckListBox;
+        private System.Windows.Forms.Panel teamsPlayerCheckListBoxPnl;
+        private System.Windows.Forms.Panel teamsPlayerHeaderPnl;
+        private System.Windows.Forms.Label teamsPlayerHeaderLbl;
+        private System.Windows.Forms.Button teamsRandomiseBtn;
+        private System.Windows.Forms.SplitContainer teamDetailsSplitContainer;
+        private System.Windows.Forms.Panel teamsSelectionContentPnl;
+        private System.Windows.Forms.ListBox teamsSelectionListBox;
+        private System.Windows.Forms.Panel teamsSelectionHeaderPnl;
+        private System.Windows.Forms.Label teamsSelectionHeaderLbl;
+        private System.Windows.Forms.Panel teamDetailsContentPnl;
+        private System.Windows.Forms.ListBox teamDetailsListBox;
+        private System.Windows.Forms.Panel teamDetailsHeaderPnl;
+        private System.Windows.Forms.Label teamDetailsHeaderLbl;
     }
 }
 
